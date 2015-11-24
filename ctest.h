@@ -476,13 +476,14 @@ int ctest_main(int argc, const char *argv[])
     if (argc >= 2) {
         suite_name = argv[1];
     }
-#ifdef CTEST_NO_COLORS
-    color_output = 0;
-#else
+
     if (argc >= 3) {
     	suite_filter_set(&suite_name_skip, argv +2, argc -2);
     }
 
+#ifdef CTEST_NO_COLORS
+    color_output = 0;
+#else
     color_output = isatty(1);
 #endif
     uint64_t t1 = getCurrentTime();
