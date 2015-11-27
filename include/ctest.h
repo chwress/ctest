@@ -29,6 +29,7 @@
 #endif
 
 #include <stdio.h>
+#include <unistd.h>
 
 typedef void (*SetupFunc)(void*);
 typedef void (*TearDownFunc)(void*);
